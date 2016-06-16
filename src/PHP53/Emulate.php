@@ -90,7 +90,7 @@ class Emulate {
    * @static
    * @link http://php.net/manual/pt_BR/function.session-register.php
    */
-  public static function sessionRegister(){
+  public static function sessionRegister() {
 
     $args = func_get_args();
     foreach ($args as $key){
@@ -106,8 +106,8 @@ class Emulate {
    * @static
    * @param mixed $key
    */
-  public static function sessionIsRegistered($key){
-    return isset($_SESSION[$key]);
+  public static function sessionIsRegistered($key) {
+    return array_key_exists($key, $_SESSION);
   }
 
   /**
@@ -117,7 +117,7 @@ class Emulate {
    * @static
    * @param mixed $key
    */
-  public static function sessionUnregister($key){
+  public static function sessionUnregister($key) {
     unset($_SESSION[$key]);
   }
 }
