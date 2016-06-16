@@ -21,6 +21,7 @@
   ],
 
   "licence": "GPL-2.0",
+  
   "autoload" : {
     "files": [
       "bootstrap/PHP_53.php",
