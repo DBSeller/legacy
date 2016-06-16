@@ -8,7 +8,6 @@ $versao = array(
   "5.6" => (version_compare(PHP_VERSION, '5.6') >= 0),
   "7.0" => (version_compare(PHP_VERSION, '7.0') >= 0),
 );
-dump($versao);
 
 if( ($versao['5.4'] || $versao['5.5'] || $versao['5.6']) && !$versao['7.0'] ) {
   ini_set("error_reporting", E_ALL & ~E_DEPRECATED);
