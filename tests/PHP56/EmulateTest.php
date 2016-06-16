@@ -10,12 +10,16 @@ class EmulateTest extends \PHPUnit_Framework_TestCase {
     $o = new Emulate();
     $this->assertTrue(!!$o);
   }
-  // /**
-  //  * Split string into array by regular expression
-  //  *
-  //  * @return array
-  //  */
-  // public static function split($pattern, $string) {
-  //   return explode($pattern, $string);
-  // }
+
+  function testAssertSplit() {
+
+    $testes = "OI:TUDO:BEM.COMO:VAI.";
+
+    $this->assertTrue(function_exists("split"));
+    $this->assertTrue(
+      is_array( $array = split(":", $testes))
+    );
+
+    $this->assertEquals(4, count($array));
+  }
 }
