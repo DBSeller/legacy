@@ -37,6 +37,7 @@ class EmulateTest extends \PHPUnit_Framework_TestCase {
     $this->assertEquals($oi, $_SERVER['oi']);
   }
 
+
   public function testMargicQuotesGPCR() {
 
     $original = "\\ '  \"";
@@ -65,4 +66,14 @@ class EmulateTest extends \PHPUnit_Framework_TestCase {
     session_register("TESTES_#2");
     $this->assertTrue(session_is_registered("TESTES_#2"));
   }
+
+  public function testSessionUnregister() {
+
+    session_register("TESTES_#3");
+
+    $this->assertTrue(session_is_registered("TESTES_#3"));
+    session_unregister("TESTES_#3");
+    $this->assertFalse(session_is_registered("TESTES_#3"));
+  }
+
 }
